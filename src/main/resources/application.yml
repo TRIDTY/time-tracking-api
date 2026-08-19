@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: time-tracking-api
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:timetracking}
+    username: ${DB_USERNAME:timetracking}
+    password: ${DB_PASSWORD:timetracking}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  jackson:
+    time-zone: UTC
+
+security:
+  jwt:
+    secret: ${JWT_SECRET:c2VjcmV0LWtleS1mb3ItZGV2LW9ubHktY2hhbmdlLWluLXByb2R1Y3Rpb24tMTIzNDU2Nzg5MA==}
+    expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
+server:
+  port: 8080
