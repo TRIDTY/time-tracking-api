@@ -31,7 +31,7 @@ O servidor sobe em `http://localhost:8080`.
 
 | Método | Rota | Acesso | Descrição |
 |---|---|---|---|
-| POST | `/api/records` | autenticado | Registra batida (`type`: `CLOCK_IN`/`CLOCK_OUT`, `latitude`, `longitude` obrigatórios). Horário gerado pelo servidor em UTC. |
+| POST | `/api/records` | autenticado | Registra batida (`type`: `CLOCK_IN`, `BREAK_START`, `BREAK_END` ou `CLOCK_OUT`; `latitude`, `longitude` obrigatórios). Horário gerado pelo servidor em UTC. |
 | GET | `/api/records/me` | autenticado | Registros do próprio usuário, mais recentes primeiro (paginado) |
 | GET | `/api/admin/records` | ROLE_MANAGER | Registros de todos, com paginação e filtros opcionais `userId`, `from`, `to` (ISO-8601) |
 
