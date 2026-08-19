@@ -63,3 +63,20 @@ curl -H "Authorization: Bearer $MANAGER_TOKEN" \
 ```
 
 Erros seguem o padrão RFC 7807 (Problem Details).
+
+## App mobile (React Native / Expo)
+
+O diretório `mobile/` contém o aplicativo de celular (Expo + TypeScript) com:
+
+- Login com JWT (token persistido no dispositivo)
+- Batida de ponto (entrada, saída para descanso, volta do descanso e saída) enviando a localização do aparelho
+- Histórico dos próprios registros (paginação por scroll)
+- Painel do gestor com registros de todos os funcionários e filtros por funcionário e período
+
+```bash
+cd mobile
+npm install
+EXPO_PUBLIC_API_URL=http://SEU_IP_LOCAL:8080 npx expo start
+```
+
+Por padrão a API é acessada em `http://10.0.2.2:8080` (emulador Android). Para aparelho físico ou iOS, defina `EXPO_PUBLIC_API_URL` com o IP da máquina que roda o backend.
